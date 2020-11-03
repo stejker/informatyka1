@@ -2,7 +2,7 @@
 """
 Created on Tue Nov  3 17:23:21 2020
 
-@author: piecza95
+@author: Adam Sawicki
 """
 d=0
 for a in range(-100,100):
