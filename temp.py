@@ -9,28 +9,28 @@ NAZWA_PLIKU = 'pomidorek.txt'
 
 
 with open(NAZWA_PLIKU, encoding='utf-8') as plik:
-    tekst = plik.read()
+    tekst = plik.read() # odczytuje plik
     
-tekst = tekst.lower()
+tekst = tekst.lower() # zmienia wszystkie litery w tekcie na małe
 
-licznik = 0
+licznik = 0 # liczba pomidorów
 
-i = 0
-n = len(SZUKAMY)
+i = 0 # pozycja litery w łańcuchu SZUKAMY
 
-j = 0
+n = len(SZUKAMY) # długoć łańcucha SZUKAMY
 
+j = 0 # pozycja litery w łańcuchu tekst
 
-while True:
-    try:
-        while tekst[j] != SZUKAMY[i]:
-            j = j + 1
-            
-        licznik = licznik + 1
-        i = (i + 1) % n
+m = len(tekst) # długoć łańcucha tekst
+
+while j < m:
+    while j < m and tekst[j] != SZUKAMY[i]:
         j = j + 1
-    except:
-        break
     
+    licznik = licznik + 1 # zlicza liczbę pomidorów
+    i = (i + 1) % n
+    j = j + 1
+    
+licznik = licznik // 7  # dziele przez liczbę liter w słowie pomidor by otrzymać prawdziwy wynik
+
 print('liczba występień = ', licznik)
-    
